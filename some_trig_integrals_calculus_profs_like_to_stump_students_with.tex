@@ -1,0 +1,118 @@
+
+
+\documentclass{article}
+
+\usepackage[margin=1.5in]{geometry} % Please keep the margins at 1.5 so that there is space for grader comments.
+\usepackage{amsmath,amsthm,amssymb,hyperref}
+\usepackage{tikz-cd}
+
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand{\Aut}{\text{Aut}} 
+\newcommand{\Inn}{\text{Inn}}
+\newcommand{\End}{\text{End}}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\PGL}{\text{PGL}}
+\newcommand{\im}{\text{im}\:}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\span}{\text{span}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{claim}[2][Claim]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+
+\noindent \textbf{integrals with powers of sec and tan}: \\ \\
+\noindent I: Integrals like 
+$$
+\int \sec^{11} x \tan^5 x \: dx
+$$
+(\textit{odd} powers of sec and tan) can be solved the following way: 
+\begin{align*}
+    \int \sec^{11} x \tan^5 x \: dx &= \int \sec x \tan x \sec^{10}x \tan^4 x dx &(\text{break off } \sec x \tan x) \\
+    &= \int \sec x \tan x \sec^{10}x (\tan^2 x )^2 dx \\
+    &=\int \sec x \tan x \sec^{10}x (\sec^2 x -1)^2 dx &(\text{use identity} \tan^2 x + 1 = \sec^2 x) \\
+    &= \int u^{10} (u^2-1)^2 du &(\text{substitute } u = \sec x) 
+\end{align*}
+From here we can expand out and then break up the integral to finish solving it.  \\ \\ \\
+II: Integrals like 
+$$
+\int \sec^6 x \tan^{12} x \: dx 
+$$
+(\textit{even} powers of sec and tan) can be solved the following way: 
+\begin{align*}
+    \int \sec^6 x \tan^{12} x \: dx &= \int \sec^2 x \sec^4 x \tan^{12}x \: dx &(\text{break off} \sec^2 x) \\
+    &= \int \sec^2 x (\sec^2 x )^2 x \tan^{12}x \: dx \\
+    &= \int \sec^2 x (\tan^2 x + 1 )^2 x \tan^{12}x \: dx &(\text{use identity } \tan^2 x + 1 = \sec^2 x) \\
+    &= \int (u^2+1)^2 u^{12}\: du &(\text{substitute } u = \tan x) 
+\end{align*}
+From here we can expand out and then break up the integral. 
+\\ \\
+\textbf{trig substitution}: uses the identities
+$$
+\cos^2\theta + \sin^2\theta = 1 \hspace{0.5cm} \text{and} \hspace{0.5cm} \tan^2\theta + 1 = \sec^2\theta
+$$
+for integrals like these (where $n$ is usually 1,2 or 3)
+$$
+(1) \:\: \int \frac{dx}{(x^2 - a^2)^{n/2}} \:\:\: \text{ or } \:\:\: (2)\:\: \int \frac{dx}{(a^2-x^2)^{n/2}} \:\:\: \text{ or } \:\:\:\ (3) \:\:\int \frac{dx}{(x^2 + a^2)^{n/2}}. 
+$$
+For (1) substitute $x = a \sec \theta$ so we can use the identity $\sec^2\theta - 1 = \tan^2\theta$. \\ \\
+For (2) substitute $x = a \sin \theta$ so we can use the identity $1-\sin^2\theta = \cos^2\theta$. \\ \\
+For (3) substitute $x = a\tan\theta$ so we can use the identity $\tan^2\theta + 1 = \sec^2\theta$. \\ \\
+If there's an $x$ term, like in
+$$
+\int \frac{dx}{x^2 + x +\frac{17}{4}}
+$$
+we'll have to complete the square:
+$$
+x^2+x+\frac{17}{4} = x^2+x+(\frac{1}{2})^2-(\frac{1}{2})^2 +\frac{17}{4} = (x+\frac{1}{2})^2 + 4.
+$$
+Then for this one we can substitute $x+\frac{1}{2} = 2\tan \theta$.  \\ \\
+\textbf{integrals with powers of sin or cos}: \\ \\
+I: even powers of cos: write the integral as 
+$$
+\int \cos^{2n} x dx = \int (\cos^2 x)^n dx
+$$
+and use the formula 
+$$
+\cos^2 x = \frac{1}{2}(1+\cos (2x))
+$$
+and then expand and it will break up into other integrals of powers of cos. \\ \\
+II: even powers of sin (really similar to even powers of cos): write the integral as
+$$
+\int \sin^{2n}x dx = \int (\sin^2 x)^n dx
+$$
+and use the formula 
+$$
+\sin^2 x = \frac{1}{2}(1-\cos(2x))
+$$
+and then expand and it will break up into other integrals of powers of cos. \\ \\
+III: odd powers of sin or cos (these ones are usually less annoying than the even powers):
+for odd powers of sin write like this: (usually $n$ will be like 1,2 or 3)
+$$
+\int \sin^{2n+1} x\:dx = \int \sin^{2n}x \:\sin x \:dx = \int (\sin^2x)^n \sin x \:dx
+$$
+and plug the pythagorean identity $\sin^2x = 1-\cos^2x$ to get
+$$
+\int (1-\cos^2 x)^n \sin x \: dx
+$$
+and then substitute $u = \cos x$ to finish solving. Integrals with odd powers of cos are solved the same way, just use $\cos^2x = 1-\sin^2x$ instead (and substitute $u = \sin x$ instead). 
+\end{document}
+
+

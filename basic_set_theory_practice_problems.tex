@@ -1,0 +1,72 @@
+
+\documentclass{article}
+
+\usepackage[margin=1.5in]{geometry} % Please keep the margins at 1.5 so that there is space for grader comments.
+\usepackage{amsmath,amsthm,amssymb,hyperref}
+\usepackage{tikz-cd}
+
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand{\Aut}{\text{Aut}} 
+\newcommand{\Inn}{\text{Inn}}
+\newcommand{\End}{\text{End}}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\PGL}{\text{PGL}}
+\newcommand{\im}{\text{im}\:}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\span}{\text{span}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{claim}[2][Claim]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+
+\noindent 1. Find the union and intersection of each of the following pairs of sets: \\ \\
+(a) $\{1,2\}$ and $\{1,0\}$
+\\ \\
+(b) $\varnothing$ (empty set) and $\{-1,0,1,2\}$
+\\ \\
+(c) $\R$ (real numbers) and $\Q$ (rational numbers)
+\\ \\
+(d) $(-\infty, 0]$ (all the negative real numbers and 0), and $[0,\infty)$ (all the positive real numbers and 0) \\ \\
+(e) $(-\infty,0)$ and $(0, \infty)$. Note that the only difference between these ones and the previous sets is these ones don't include 0. 
+\\ \\
+(f) $\{n \in \Z: n \text{ is odd} \}$ and $\{n \in \Z: n \text{ is even}\}$. In case it's useful the formal definition of an odd number is a number that can be written $2k+1$ for some integer $k$, and an even number can be written $2k$ (could be different $k$).
+\\ \\
+(g) $\Q$ (rational numbers) and $\Z$ (integers). \\ \\
+2. Which of the pairs of sets in problem 1 are disjoint? \\ \\
+3. For some of the pairs of sets in problem 1, one of the sets is a subset of the other one. Which pairs of sets have this property, and for those pairs, which set is a subset of the other one? \textit{For example, in part (c) $\Q$ is a subset of $\R$, since every rational number is also a real number. We write this $\Q \subset \R$. In (a), neither set is a subset of the other one because $2$ is in the first set but not the second, and $0$ is in the second set but not the first. } \\ \\
+4. Find the complement of the following sets: \\ \\
+(a) $\{0,1\}$, the universe set is $\{0,1,2,3,4,5,6,7\}$. \\ \\
+(b) $\{ n \in \Z : n \text{ is even}\}$, the universe set is $\Z$.
+\\ \\
+(c) $[0,1]$ (the interval from 0 to 1 including the endpoints), the universe set is $\R$. \\ \\
+(d) $(0,1)$ (the interval from 0 to 1 not including the endpoints), the universe set is $\R$. \\ \\
+5. What is the cardinality of the following sets? It will either be a positive integer (could be 0 but only if it's the empty set) or infinite ($\infty$). \\ \\
+(a) $\{0,2,4,6\}$ \\ \\
+(b) $\{0\}$ \\ \\
+(c) $\R$ \\ \\
+(d) $\Z \cap (\R - \Q)$ \\ \\
+6. Write the sets in (d) and (e) of problem 1 in set-builder notation: \\ \\
+$\{ x \in \{\text{bigger set} \} : \text{ condition on }x \}$  \\ \\
+The sets in part (f) of problem 1 are the odd integers and even integers (respectively) written in set builder notation, for an example. 
+
+\end{document}
+
+

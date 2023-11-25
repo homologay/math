@@ -1,0 +1,67 @@
+
+\documentclass{article}
+
+\usepackage[margin=1.5in]{geometry} % Please keep the margins at 1.5 so that there is space for grader comments.
+\usepackage{amsmath,amsthm,amssymb,hyperref}
+\usepackage{tikz-cd}
+
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand{\Aut}{\text{Aut}} 
+\newcommand{\Inn}{\text{Inn}}
+\newcommand{\End}{\text{End}}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\PGL}{\text{PGL}}
+\newcommand{\im}{\text{im}\:}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\span}{\text{span}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{claim}[2][Claim]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\noindent \textbf{Optimization problems with two variables:} \\ \\
+\noindent Review of how to find the absolute max/min of a function of one variable, $f(x)$, on a closed interval $[a,b]$: \\ \\
+(a) find the critical points of $f$ on the "interior" of the interval, $(a,b)$. The critical points are the $x$ such that $f'(x) = 0$. \\ 
+(b) Compare the values of the function $f(x)$ at the critical points and the endpoints (kinda like the "boundary") of the interval, $a$ and $b$.
+\\ \\
+\noindent Similarly to how you can find the absolute max/min of a function of one variable on a closed interval, we can find the maximum and minimum of a function of two variables, $f(x,y)$, on a region in the $xy$-plane. In the 2 variable case we find the critical points in the interior of the region, then find the critical points on the boundary, and then we test them to find the max/min. \\ \\
+See other the pdf for examples of regions and their boundaries, you might find it helpful to graph the region in the question. Also, often you can skip part A, because they often only give the boundary as the domain of $f(x,y)$. \\ \\
+A. Finding critical points in the interior: \\ \\
+The critical points of $f(x,y)$ are the points where its gradient is 0. These are the points where both partial derivatives are 0. So, we have two equations in two variables:
+\begin{align*}
+    \frac{\partial f}{\partial x} &= 0 &(1) \\
+    \frac{\partial f}{\partial y} &= 0 &(2)
+\end{align*}
+First find $\frac{\partial f}{\partial x}$ and $\frac{\partial f}{\partial y}$, then use equations (1) and (2) to find the critical points $(x,y)$. Make sure they actually lie inside the domain of $f(x,y)$. \\ \\
+B. Finding the critical points in the boundary: \\ \\
+There are two ways to do this - Lagrange multipliers or parametrizing the boundary. Lagrange multipliers is really the only way you need to know, but in some cases parametrizing the boundary can be easier. \\ \\
+Lagrange multipliers: \\ \\
+The equation of the boundary is the \textit{constraint equation}. First write it in the form $g(x,y) = 0$. Next set up the system of equations
+\begin{align*}
+    \frac{\partial f}{\partial x} &= \lambda \frac{\partial g}{\partial x} &(1) \\
+    \frac{\partial f}{\partial y} &= \lambda \frac{\partial g}{\partial y} &(2) \\
+    g(x,y) &= 0 &(3)
+\end{align*}
+(equations (1) and (2) are the same as saying $\nabla f = \lambda \nabla g$). Next compute the partial derivatives of $f$ and $g$, then we can solve the system of equations. Usually the easiest way to do this is to solve (1) and (2) for $\lambda$ to get an equation with just $x$ and $y$. Then substitute that equation into (3). You'll end up with some points $(x,y)$ - make sure you get all the possible points when solving the equations. \\ \\
+C. Testing the points  \\ \\
+Now we have some points $(x,y)$ from part A (unless it was skipped for the problem) and some from part B. We plug in each point to $f(x,y)$ and figure out which value is max and which is the min. Often it's helpful to make a table. 
+\end{document}
+
+

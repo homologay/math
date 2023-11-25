@@ -1,0 +1,214 @@
+\documentclass{article}
+
+\usepackage[margin=1.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amsthm,amssymb,hyperref,tikz,tikz-cd,hyperref,bold-extra}
+\usepackage{physics}
+\usepackage{upgreek}
+\usepackage{halloweenmath}
+\usepackage[dvipsnames]{xcolor}
+
+%some useful shortcuts
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Log}{\text{Log}\:}
+\newcommand{\im}{\text{im}\:}
+\newcommand{\coker}{\text{coker}\:}
+\newcommand{\cat}[1]{\textsf{#1}}
+
+\title{Solutions to Emily Rhiel's \textit{Category Theory in Context}}
+\author{by Maxine}
+\date{\today}
+
+\makeatletter
+\newcommand{\tpmod}[1]{{\@displayfalse\pmod{#1}}}
+\makeatother
+%no idea what this does
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{claim}[2][Claim]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\maketitle
+
+\large 
+\vspace{0.05in}
+\noindent 
+Note: Throughout I use "morphism," "map," and "arrow" interchangeably. \\ \\
+\textsc{Exercise} 1.1.i. (i) 
+\begin{solution}
+    Suppose that $f: x \to y$ is a morphism and $g,h: y \rightrightarrows x$ are such that $fg= 1_x = fh$ and $gf = 1_y = hf$. Then
+    \[
+        g = g 1_x = g (fh) = (gf) h = 1_y h = h
+    \]
+\end{solution}
+\noindent (ii) Consider a morphism $f: x \to y$. Show that if there exists a pair of morphisms $g,h: y \rightrightarrows x$ so that $gf = 1_x$ and $fh = 1_y$, then $g=h$ and $f$ is an isomorphism. \\ \\
+\textsc{Exercise} 1.1.ii. 
+Let \cat{C} be a category. Show that the collection of isomorphisms in \cat{C} defines a subcategory, the maximal groupoid inside \cat{C}. \\ \\
+\textsc{Exercise} 1.1.iii.
+\begin{solution}
+    (i) Verifying the category axioms for $c/C$ amounts to showing the diagrams below commute, and the equations in \eqref{eqn:3} hold.
+    \begin{equation} \label{eqn:1}
+        \begin{tikzcd}
+            & c \arrow[dl] \arrow[dr]\\
+            x \arrow[rr, "\text{id}_x"] && x
+        \end{tikzcd}
+    \end{equation}
+    \begin{equation}\label{eqn:2}
+        \begin{tikzcd}
+            & c \arrow[dr]\arrow[d]\arrow[dl]\\
+            x  \arrow[r] & y \arrow[r]  & z 
+        \end{tikzcd}
+    \end{equation}
+    \begin{equation}\label{eqn:3}
+        \begin{tikzcd}
+            & c \arrow[dr]\arrow[d]\arrow[dl]\\
+            x  \arrow[r] & y \arrow[r, "\text{id}_y"]  & y 
+        \end{tikzcd}
+        =
+        \begin{tikzcd}
+            & c \arrow[dr]\arrow[dl]\\
+            x \arrow[rr]  && y 
+        \end{tikzcd}
+        =
+        \begin{tikzcd}
+            & c \arrow[dr]\arrow[d]\arrow[dl]\\
+            x  \arrow[r, "\text{id}_x"] & x \arrow[r]  & y 
+        \end{tikzcd}
+    \end{equation}
+    These properties are inherited by $c/C$ from $C$. 
+    %?: examples of this\\ \\
+    (ii) This is similar to (i), but with the following diagrams instead. 
+    \begin{equation*}
+        \begin{tikzcd}
+            x \arrow[dr, "f"] \arrow[rr, "\text{id}_x"] && x \arrow[dl, "f"] \\
+            & c
+        \end{tikzcd}
+    \end{equation*}
+    \begin{equation*}
+        \begin{tikzcd}
+                    x \arrow[dr] \arrow[r] & y \arrow[d] \arrow[r] & z \arrow[dl] \\
+            & c 
+        \end{tikzcd}
+    \end{equation*}
+    \begin{equation*}
+        \begin{tikzcd}
+                    x \arrow[dr] \arrow[r] & y \arrow[r, "\text{id}_y"] \arrow[d] & y \arrow[dl] \\
+            & c 
+        \end{tikzcd}
+        =
+        \begin{tikzcd}
+        x  \arrow[rr] \arrow[dr]&& y \arrow[dl]\\ 
+            & c 
+        \end{tikzcd}
+        =
+        \begin{tikzcd}
+                    x \arrow[dr] \arrow[r, "\text{id}_x"] & x \arrow[r] \arrow[d] & y \arrow[dl] \\
+            & c 
+        \end{tikzcd}
+    \end{equation*}
+    Topological example: Deck transformations.
+    \end{solution}
+\noindent \textsc{Exercise} 1.2.i. Show that $\cat{C}/c \cong (c/(\cat{C}^{\text{op}}))^{\text{op}}$. Defining $\cat{C}/c$ to be $(c/(\cat{C}^{\text{op}}))^{\text{op}}$, deduce Exercise 1.1.iii(ii) from Exercise 1.1.iii(i).\\ \\
+\textsc{Exercise} 1.2.ii. (i) Show that a morphism $f: x\to y$ is a split epimorphism in a category \cat{C} if and only if for all $c \in \cat{C}$, post-composition $f_*: \cat{C}(c,x) \to \cat{C}(c,y)$ defines a surjective function. \\
+(ii) Argue by duality that $f$ is a split monomorphism if and only if for all $c \in \cat{C}$, pre-composition $f^*: \cat{C}(y,c) \to \cat{C}(x,c)$ is a surjective function. \\ \\
+\textsc{Exercise} 1.2.iii. Prove Lemma 1.2.11 by proving either (i) or (i') and either (ii) or (ii'), then arguing by duality. Conclude that the monomorphisms in any category define a subcategory of that category and dually that the epimorphisms also define a subcategory. \\ \\
+\textsc{Exercise} 1.2.iv. 
+\begin{solution}
+    The monomorphisms in \cat{Field} are precisely the injections. We know injections in a concrete category are always monomorphisms, and field morphisms are always injective. This comes from basic ring theory: the only ideals of a field $F$ are $(1) = F$ and $(0)$, and the kernel of a ring homomorphism is an ideal (forcing the morphism to have either trivial kernel, or send everything to zero). In the (reasonable) case we require field morphisms to send 1 to 1, then the kernel must be trivial.
+\end{solution}
+\noindent \textsc{Exercise} 1.2.v. 
+\begin{solution}
+    We denote the inclusion $\Z \to \Q$ by $\iota$. As an injection, $\iota$ is monic. We let $h,k: \Q \rightrightarrows A$ be ring maps such that $h \iota = k \iota$. In other words, for every $n \in \Z$ we have $h(\frac{n}{1}) = k(\frac{n}{1})$. What about fractions of the form $\frac{1}{n}$? We must have $h(\frac{1}{n}) = k(\frac{1}{n})$, as
+    \[
+    1_A = h(\frac{n}{1})h(\frac{1}{n}) = k(\frac{n}{1})h(\frac{1}{n})
+    \]
+    and multiplicative inverses in a ring are unique. It follows that $h$ and $k$ agree on all elements of $\Q$ and thus denote the same map. Therefore $\iota$ is epi. Of course, $\Q$ and $\Z$ are not isomorphic as rings --- the reader is left to find her favourite way to say that more precisely (mine is that the Krull dimension of $\Z$ is one, and $\Q$, zero).
+\end{solution}
+\noindent \textsc{Exercise} 1.2.vi. 
+\begin{solution}
+    Suppose that $f: x \to y$ is mono and split epi. So, there exists a section $s: y \to x$ such that $fs = 1_y$, and we must show that $sf = 1_x$. This immediately follows from $f$ being epi, since 
+    \[
+    fsf = 1_y f = f 1_x 
+    \]
+    Dually, if $f: y \to x$ is instead split mono and epi, then $f$ is also an isomorphism.
+\end{solution}
+\noindent \textsc{Exercise} 1.2.vii. \begin{solution}
+An object $S \in \cat{P}$ is the \textit{supremum} of a subcollection of objects $A \in \cat{P}$ if 
+\begin{enumerate}
+\item there exists a morphism $A \to S$ for all $A$ in the subcollection 
+\item if, for some object $A$ in the subcollection, there exists a morphism $A \to S'$ for some object $S' \in \cat{P}$, then there exists a morphism $S \to S'$. 
+\end{enumerate}
+The dual of this statement gives the definition for the \textit{infimum}, which can be equivalently defined as the supremum in $\cat{P}^{\text{op}}$.
+\end{solution}
+\noindent \textsc{Exercise} 1.3.i. \begin{solution}
+    A group homomorphism. More precisely, given a group homomorphism $f: G 
+    \to H$, if we regard $G, H$ as one-object categories then the axioms for functoriality correspond with the group homomorphism axioms. 
+\end{solution}
+\noindent \textsc{Exercise} 1.3.ii. \begin{solution}
+A monotone function, similar to exercise 1.3.i. Since "monotone" has different definitions in mathematics, I mean a function $f: P \to Q$ is $\textit{monotone}$ if given $x \leq y$ in $P$, then $f(x) \leq f(y)$ in $Q$. 
+\end{solution}
+\noindent \textsc{Exercise} 1.3.iii.
+\begin{solution}
+    This is a spin on the classic solution to this exercise, featuring more algebra (since algebra is my favourite kind of math). It relies on the same pivot, that composites that exist in the codomain category may not exist in the domain category. Consider the following diagram, under the forgetful functor $\cat{Ring} \to \cat{Ab}$. We use the fact that the abelian group $\Z/p \times \Z/p$ admits multiple nonisomorphic ring structures (here $p$ is a prime).
+    \begin{equation}
+    \begin{tikzcd}
+        \mathbb{F}_{p^2} \arrow[r, "\text{id}"] &\mathbb{F}_{p^2} \\
+        &\mathbb{F}_p \times \mathbb{F}_p \arrow[r, "\text{id}"] &\mathbb{F}_p \times \mathbb{F}_p \\
+        &\Downarrow \\
+        \Z / p \times \Z / p \arrow[r, "\text{id}"] &\Z / p \times \Z / p \arrow[r, "\text{id}"] &\Z/p \times \Z/p
+    \end{tikzcd}
+    \end{equation}
+    The composite in $\cat{Ab}$ is just the identity of $\Z/p \times \Z/p$. However, there is no nontrivial ring map $\mathbb{F}_{p^2} \to \mathbb{F}_p \times \mathbb{F}_p$. As a field, any maps from $\mathbb{F}_{p^2}$ are necessarily injective. Since $\mathbb{F}_p \times \mathbb{F}_p$ and $\mathbb{F}_{p^2}$ are both finite of cardinality $p^2$, such a map would be an isomorphism, which is not possible since $\mathbb{F}_p \times \mathbb{F}_p$ is not a field. \\ \\
+    As an extra fact, there are abelian groups which do not admit a (nontrivial) ring structure, such as $\Q / \Z$, or $\Z(p^{\infty}) := \Z[1/p] / \Z $. In other words, the there are objects of $\cat{Ab}$ that are not in the image of the forgetful functor $\cat{Ring} \to \cat{Ab}$.
+\end{solution}
+\noindent \textsc{Exercise} 1.3.iv. Verify that the constructions introduced in Definition 1.3.11 are functorial. \\ \\
+\textsc{Exercise} 1.3.v. What is the difference between a functor $\textsf{C}^{\text{op}} \to \textsf{D}$ and a functor $\textsf{C} \to \textsf{D}^{\text{op}}$? What is the difference between a functor $\textsf{C} \to \textsf{D}$ and a functor $\textsf{C}^{\text{op}} \to \textsf{D}^{\text{op}}$? \\ \\
+\textsc{Exercise} 1.3.vi. Given functors $F: \textsf{D} \to \textsf{C}$ and $G: \textsf{E} \to \textsf{C}$, show that there is a category, called the \textbf{comma category} $F \downarrow G$, which has 
+\begin{itemize}
+    \item as objects, triples $(d \in \textsf{D}, e\in \textsf{E}, f: Fd \to Ge \in C)$, and 
+    \item as morphisms $(d, e, f) \to (d', e', f')$, a pair of morphisms $(h: d \to d', k: e \to e')$ so that the square
+\end{itemize}
+    \begin{equation}
+        \begin{tikzcd} 
+            Fd \arrow[d, "Fh"]\arrow[r, "f"] & Ge \arrow[d, "Gk"] \\
+            Fd' \arrow[r, "f'"] &Ge'
+        \end{tikzcd}
+    \end{equation}
+    \indent commutes in $\textsf{C}$, ie., so that $f' \cdot Fh = Gk \cdot f$. \\  \\
+Define a pair of projection functors $\text{dom}: F \downarrow G \to \textsf{D}$ and $\text{cod}: F \downarrow G \to \textsf{E}$. \\ \\
+\textsc{Exercise} 1.3.vii. Define functors to construct the slice categories in $c/C$ and $C/c$ of Exercise 1.1.iii as special cases of comma categories constructed in Exercise 1.3.vi. What are the projection functors? \\ \\
+% do after 1.3.vi
+\textsc{Exercise} 1.3.viii. Lemma 1.3.8 shows that functors preserve isomorphisms. Find an example to demonstrate that functors need not \textbf{reflect isomorphisms}: that is, find a functor $F: \textsf{C} \to \textsf{D}$ and a morphism $f$ in $\textsf{C}$ so that $Ff$ is an isomorphism in $\textsf{D}$ but $f$ is not an isomorphism in $\textsf{C}$. \\ \\
+\textsc{Exercise} 1.3.ix. For any group $G$, we may define other groups:
+\begin{itemize}
+    \item the \textbf{center} $Z(G) = \{ h \in G \: | \: hg=gh \; \forall g \in G \}$, a subgroup of $G$. 
+    \item the \textbf{commutator subgroup} $C(G)$, the subgroup of $G$ generated by elements $ghg^{-1}h^{-1}$ for any $g,h \in G$, and
+    \item the \textbf{automorphism group} $\text{Aut}(G)$, the group of isomorphisms $\phi: G \to G$ in \cat{Group}.
+\end{itemize}
+Trivially, all three constructions define a functor from the discrete category of groups (with only identity morphisms) to \cat{Group}. Are these constructions functorial in 
+\begin{itemize}
+    \item the isomorphisms of groups? That is, do they extend to functors $\cat{Group}_{\text{iso}} \to \cat{Group}$? 
+    \item the epimorphisms of groups? That is, do they extend to functors $\cat{Group}_{\text{epi}} \to \cat{Group}$? 
+    \item all homomorphisms of groups? That is, do they extend to functors $\cat{Group} \to \cat{Group}$?
+\end{itemize}
+%seems confusing on first readthrough. from the wording, I expect it extends the first two but not the last.
+\textsc{Exercise} 1.3.x. Show that the construction of the set of conjugacy classes of elements of a goup is functorial, defining a functor $\text{Conj}: \cat{Group} \to \cat{Set}$. Conclude that any pair of groups whose sets of conjugacy classes of elements have differing cardinalities cannot be isomorphic.
+    
+ \end{document}

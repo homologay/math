@@ -1,0 +1,71 @@
+
+\documentclass{article}
+
+\usepackage[margin=1.5in]{geometry} % Please keep the margins at 1.5 so that there is space for grader comments.
+\usepackage{amsmath,amsthm,amssymb,hyperref}
+\usepackage{tikz-cd}
+
+\newcommand{\R}{\mathbb{R}}  
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand\myeq{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand{\Aut}{\text{Aut}} 
+\newcommand{\Inn}{\text{Inn}}
+\newcommand{\End}{\text{End}}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\PGL}{\text{PGL}}
+\newcommand{\im}{\text{im}\:}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\span}{\text{span}}
+
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{claim}[2][Claim]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+
+\noindent SOLUTIONS: \\ \\
+1. Listed union, intersection. \\ \\
+(a) $\{0,1,2\}, \{1\}$
+\\ \\
+(b) $\{-1,0,1,2\}$, $\varnothing$
+\\ \\
+(c) $\R, \Q$
+\\ \\
+(d) $\R, \{0\}$\\ \\
+(e) $\R - \{0\}$ (or in set builder notation: $\{x\in \R: x \neq 0\}$), $\varnothing$.
+\\ \\
+(f) $\Z$, $\varnothing$
+\\ \\
+(g) $\Q, \Z$ \\ \\
+2. (b), (e), and (f) are disjoint. \\ \\
+3. For (b) $\varnothing \subset \{-1,0,1,2\}$, although if you missed this one don't worry. We define the empty set as a subset of every set. It works with the container metaphor, because every container full of stuff still has a container (every set has the empty set as a subset). For (c) $\Q \subset \R$, and for (g) $\Z \subset \Q$. For the rest, neither set is a subset of the other. \\ \\
+4. 
+(a) $\{2,3,4,5,6,7\}$. \\ \\
+(b) $\{n \in \Z: n \text{ is odd}\}$.
+\\ \\
+(c) $\{x\in \R: x < 0 \text{ or } x > 1$\}. Alternately we could write it as $(-\infty, 0) \cup (1, \infty)$.\\ \\
+(d) $\{x\in \R: x \leq 0 \text{ or } x \geq 1$\}. Alternately we could write it as $(-\infty, 0] \cup [1, \infty)$.\\ \\
+5. 
+(a) 4 \\ \\
+(b) 1 \\ \\
+(c) $\infty$ \\ \\
+(d) 0. This is because this is actually the empty set. \\ \\
+6. The sets in (d) are $\{x\in \R: x \leq 0\}$ and $\{x\in \R: x \geq 0\}$, respectively. The sets in (e) are $\{ x \in \R: x < 0\}$ and $\{ x \in \R: x > 0\}$, respectively. 
+
+\end{document}
+
+
