@@ -133,13 +133,13 @@ Let \cat{C} be a category. Show that the collection of isomorphisms in \cat{C} d
 \begin{solution}
     The monomorphisms in \cat{Field} are precisely the injections. We know injections in a concrete category are always monomorphisms, and field morphisms are always injective. This comes from basic ring theory: the only ideals of a field $F$ are $(1) = F$ and $(0)$, and the kernel of a ring homomorphism is an ideal (forcing the morphism to have either trivial kernel, or send everything to zero). In the (reasonable) case we require field morphisms to send 1 to 1, then the kernel must be trivial.
 \end{solution}
-\noindent \textsc{Exercise} 1.2.v. 
+\noindent \textsc{Exercise} 1.2.v. (map that is monic and epi but not an isomorphism)
 \begin{solution}
     We denote the inclusion $\Z \to \Q$ by $\iota$. As an injection, $\iota$ is monic. We let $h,k: \Q \rightrightarrows A$ be ring maps such that $h \iota = k \iota$. In other words, for every $n \in \Z$ we have $h(\frac{n}{1}) = k(\frac{n}{1})$. What about fractions of the form $\frac{1}{n}$? We must have $h(\frac{1}{n}) = k(\frac{1}{n})$, as
     \[
     1_A = h(\frac{n}{1})h(\frac{1}{n}) = k(\frac{n}{1})h(\frac{1}{n})
     \]
-    and multiplicative inverses in a ring are unique. It follows that $h$ and $k$ agree on all elements of $\Q$ and thus denote the same map. Therefore $\iota$ is epi. Of course, $\Q$ and $\Z$ are not isomorphic as rings --- the reader is left to find her favourite way to say that more precisely (mine is that the Krull dimension of $\Z$ is one, and $\Q$, zero).
+    and multiplicative inverses in a ring are unique. It follows that $h$ and $k$ agree on all elements of $\Q$ and thus denote the same map. Therefore $\iota$ is epi. Of course, $\Q$ and $\Z$ are not isomorphic in $\cat{Ring}$.
 \end{solution}
 \noindent \textsc{Exercise} 1.2.vi. 
 \begin{solution}
@@ -164,9 +164,9 @@ The dual of this statement gives the definition for the \textit{infimum}, which 
 \noindent \textsc{Exercise} 1.3.ii. \begin{solution}
 A monotone function, similar to exercise 1.3.i. Since "monotone" has different definitions in mathematics, I mean a function $f: P \to Q$ is $\textit{monotone}$ if given $x \leq y$ in $P$, then $f(x) \leq f(y)$ in $Q$. 
 \end{solution}
-\noindent \textsc{Exercise} 1.3.iii.
+\noindent \textsc{Exercise} 1.3.iii. (the image of a functor is not necessarily a category)
 \begin{solution}
-    This is a spin on the classic solution to this exercise, featuring more algebra (since algebra is my favourite kind of math). It relies on the same pivot, that composites that exist in the codomain category may not exist in the domain category. Consider the following diagram, under the forgetful functor $\cat{Ring} \to \cat{Ab}$. We use the fact that the abelian group $\Z/p \times \Z/p$ admits multiple nonisomorphic ring structures (here $p$ is a prime).
+    This is a spin on the classic solution to this exercise, featuring more algebra (since algebra is my favourite kind of math). It relies on the same point: composites that exist in the codomain category may not exist in the domain category. Consider the following diagram, under the forgetful functor $\cat{Ring} \to \cat{Ab}$. We use the fact that the abelian group $\Z/p \times \Z/p$ admits multiple nonisomorphic ring structures (here $p$ is a prime).
     \begin{equation}
     \begin{tikzcd}
         \mathbb{F}_{p^2} \arrow[r, "\text{id}"] &\mathbb{F}_{p^2} \\
@@ -174,25 +174,34 @@ A monotone function, similar to exercise 1.3.i. Since "monotone" has different d
         &\Downarrow \\
         \Z / p \times \Z / p \arrow[r, "\text{id}"] &\Z / p \times \Z / p \arrow[r, "\text{id}"] &\Z/p \times \Z/p
     \end{tikzcd}
-    \end{equation}
-    The composite in $\cat{Ab}$ is just the identity of $\Z/p \times \Z/p$. However, there is no nontrivial ring map $\mathbb{F}_{p^2} \to \mathbb{F}_p \times \mathbb{F}_p$. As a field, any maps from $\mathbb{F}_{p^2}$ are necessarily injective. Since $\mathbb{F}_p \times \mathbb{F}_p$ and $\mathbb{F}_{p^2}$ are both finite of cardinality $p^2$, such a map would be an isomorphism, which is not possible since $\mathbb{F}_p \times \mathbb{F}_p$ is not a field. \\ \\
-    As an extra fact, there are abelian groups which do not admit a (nontrivial) ring structure, such as $\Q / \Z$, or $\Z(p^{\infty}) := \Z[1/p] / \Z $. In other words, the there are objects of $\cat{Ab}$ that are not in the image of the forgetful functor $\cat{Ring} \to \cat{Ab}$.
+    \end{equation}As a field, any maps from $\mathbb{F}_{p^2}$ are necessarily injective. Since $\mathbb{F}_p \times \mathbb{F}_p$ and $\mathbb{F}_{p^2}$ are both finite of cardinality $p^2$, such a map would be an isomorphism, which is not possible since $\mathbb{F}_p \times \mathbb{F}_p$ is not isomorphic to $\mathbb{F}_{p^2}$. \\ \\
+Thus, there is no ring map $\mathbb{F}_{p^2} \to \mathbb{F}_p \times \mathbb{F}_p$, so the composite in $\cat{Ab}$ cannot exist back in $\cat{Ring}$. \\ \\
+    As an extra fact, unrelated to the problem statement but interesting anyways, there are abelian groups which do not admit a (nontrivial) ring structure, such as $\Q / \Z$, or $\Z(p^{\infty}) := \Z[1/p] / \Z $. In other words, the there are objects of $\cat{Ab}$ that are not in the image of the forgetful functor $\cat{Ring} \to \cat{Ab}$.
 \end{solution}
 \noindent \textsc{Exercise} 1.3.iv. Verify that the constructions introduced in Definition 1.3.11 are functorial. \\ \\
 \textsc{Exercise} 1.3.v. What is the difference between a functor $\textsf{C}^{\text{op}} \to \textsf{D}$ and a functor $\textsf{C} \to \textsf{D}^{\text{op}}$? What is the difference between a functor $\textsf{C} \to \textsf{D}$ and a functor $\textsf{C}^{\text{op}} \to \textsf{D}^{\text{op}}$? \\ \\
-\textsc{Exercise} 1.3.vi. Given functors $F: \textsf{D} \to \textsf{C}$ and $G: \textsf{E} \to \textsf{C}$, show that there is a category, called the \textbf{comma category} $F \downarrow G$, which has 
-\begin{itemize}
-    \item as objects, triples $(d \in \textsf{D}, e\in \textsf{E}, f: Fd \to Ge \in C)$, and 
-    \item as morphisms $(d, e, f) \to (d', e', f')$, a pair of morphisms $(h: d \to d', k: e \to e')$ so that the square
-\end{itemize}
-    \begin{equation}
-        \begin{tikzcd} 
-            Fd \arrow[d, "Fh"]\arrow[r, "f"] & Ge \arrow[d, "Gk"] \\
-            Fd' \arrow[r, "f'"] &Ge'
-        \end{tikzcd}
-    \end{equation}
-    \indent commutes in $\textsf{C}$, ie., so that $f' \cdot Fh = Gk \cdot f$. \\  \\
-Define a pair of projection functors $\text{dom}: F \downarrow G \to \textsf{D}$ and $\text{cod}: F \downarrow G \to \textsf{E}$. \\ \\
+\textsc{Exercise} 1.3.vi. (Comma category definition, dom / cod functors)
+\begin{solution}
+    For an object $(d, e, f)$ in $F \downarrow G$, her identity morphism is $(1_{Fd}, 1_{Ge})$. The square 
+    \[
+    \begin{tikzcd}
+        Fd \arrow[d, "1_{Fd}"] \arrow[r, "f"] &Ge \arrow[d, "1_{Ge}"] \\
+        Fd \arrow[r, "f"] &Ge \\
+    \end{tikzcd}
+    \]
+    commutes, and 
+    \[
+    (1_{Fd}, 1_{Ge}) \circ (h, k) = (h, k) = (h, k) \circ (1_{Fd'}, 1_{Ge'}).
+    \]
+    We hope there is no confusion about how composition is defined. Similarly to how identities were shown, $F \downarrow G$ inherits associativity from associativity in $\cat{C}, \cat{D}, \cat{E}$, and functoriality of $F$ and $G$ is necessary. So, $F \downarrow G$ is a category, and we define dom and cod by
+    \begin{align*}
+    &\text{dom}(d, e, f) = d \hspace{1cm} \text{cod}(d, e, f) = e\\ 
+    &\text{dom}(h, k) = h  \hspace{1.433cm} \text{cod}(h,k) = k
+    \end{align*}
+    
+        
+
+\end{solution}    
 \textsc{Exercise} 1.3.vii. Define functors to construct the slice categories in $c/C$ and $C/c$ of Exercise 1.1.iii as special cases of comma categories constructed in Exercise 1.3.vi. What are the projection functors? \\ \\
 % do after 1.3.vi
 \textsc{Exercise} 1.3.viii. Lemma 1.3.8 shows that functors preserve isomorphisms. Find an example to demonstrate that functors need not \textbf{reflect isomorphisms}: that is, find a functor $F: \textsf{C} \to \textsf{D}$ and a morphism $f$ in $\textsf{C}$ so that $Ff$ is an isomorphism in $\textsf{D}$ but $f$ is not an isomorphism in $\textsf{C}$. \\ \\
