@@ -1,6 +1,4 @@
-Time for math. 
-
-Here are some textbooks on my bookshelf that I like to read sometimes. I might post some problem solutions from these books here. 
+Here is my math bookshelf. I might post some notes from these textbooks, and solutions to exercises. As may be apparent, my interests lean towards algebra.
 
 *Introduction to Commutative Algebra* by Atiyah and MacDonald
 
@@ -20,8 +18,13 @@ Here are some textbooks on my bookshelf that I like to read sometimes. I might p
 
 *An Introduction to Homological Algebra* by Weibel
 
-I recommend trying to solve the problems before looking at the solutions (oh, boo! I know...!) 
+*On Numbers and Games* by Conway
 
+*Principles of Mathematical Analysis* by Rudin
+
+*Differential Geometry of Curves and Surfaces* by Do Carmo
+
+*A First Look at Rigorous Probability Theory* by Rosenthal
 
 
  
