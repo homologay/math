@@ -1,4 +1,12 @@
-Here is my math bookshelf. I might post some notes from these textbooks, and solutions to exercises. As may be apparent, my interests lean towards algebra.
+# Math 
+
+There are three folders in this repository. 
+
+```educational_materials``` is specifically tailored for students taking math classes. It's likely of limited interest otherwise.
+
+```expository``` is mathematical writing exploring advanced concepts for a general audience. 
+
+```textbook_solutions``` contains solutions and notes from some books I read. This is what's on my shelf:  
 
 *Introduction to Commutative Algebra* by Atiyah and MacDonald
 
