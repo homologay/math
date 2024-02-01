@@ -2,11 +2,11 @@
 
 There are three folders in this repository. 
 
-```educational_materials``` is specifically tailored for students taking math classes. It's likely of limited interest otherwise.
+```educational_materials``` is for students taking math classes. They're organized by subject. It's likely of limited interest otherwise. This is my original writing and should not be used without crediting me. 
 
-```expository``` is mathematical writing exploring advanced concepts for a general audience. 
+```expository``` is mathematical writing exploring advanced concepts for a general audience. This is my original writing and should not be used without crediting me.
 
-```textbook_solutions``` contains solutions and notes from some books I read. This is what's on my shelf:  
+```textbook_solutions``` contains solutions and notes from some books I read. You may use them for your homework. My interests tend towards algebra. This is what's on my shelf:  
 
 *Introduction to Commutative Algebra* by Atiyah and MacDonald
 
@@ -34,5 +34,5 @@ There are three folders in this repository.
 
 *A First Look at Rigorous Probability Theory* by Rosenthal
 
-
+*Calculus on Manifolds* by Spivak 
  
