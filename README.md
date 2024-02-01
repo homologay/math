@@ -4,7 +4,7 @@ There are three folders in this repository.
 
 ```educational_materials``` is for students taking math classes. They're organized by subject. It's likely of limited interest otherwise. This is my original writing and should not be used without crediting me. 
 
-```expository``` is mathematical writing exploring advanced concepts for a general audience. This is my original writing and should not be used without crediting me.
+```expository``` explores advanced concepts for a general audience. This is my original writing and should not be used without crediting me.
 
 ```textbook_solutions``` contains solutions and notes from some books I read. You may use them for your homework. My interests tend towards algebra. This is what's on my shelf:  
 
